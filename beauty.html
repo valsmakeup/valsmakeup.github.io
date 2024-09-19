@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/lightbox.min.css">
+    <script src="/js/lightbox-plus-jquery.min.js"></script>
+    <title>Val's Makeup</title>
+    <link rel="shortcut icon" type="image/jpg" href="/pictures/icon.ico"/>
+</head>
+
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .container{
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 3%;
+        padding-bottom: 60px;
+    }
+
+    .gallery{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-gap: 30px;
+    }
+
+    .gallery img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: 1s;
+    }
+
+    .gallery img:hover{
+        filter: grayscale(100%);
+        transform: scale(1.1);
+    }
+</style>
+
+ <body>
+    <nav class="navbar">
+        <!-- Logo -->
+        <div class="logo">Val's Makeup</div>
+        <!-- Nav Menu -->
+        <ul class="nav-links">
+        <!-- Checkbox workaround -->
+        <input type="checkbox" id="checkbox_toggle" />
+        <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+        <!-- Menus -->
+        <div class="menu">
+            <li><a href="/">Home</a></li>
+            <li><a href="/portfolio.html">Portfolio</a></li>
+            <li class="contact"><a href="/contact.html">Contact</a>
+        </ul>
+    </nav>
+
+    <!-- Picture/Text --> 
+    <div class="container">
+        <div class="gallery" id="photos">
+            <script>
+            var folder = "/_beauty_photos/";
+            $.ajax({
+            url : folder,
+            success: function (data) {
+            $(data).find("a").attr("href", function (i, val) {
+            if( val.match(/\.(jpe?g|png|gif|webp)$/) ) { 
+                document.getElementById('photos').innerHTML += `<div>
+                <a href="/_beauty_photos/${val}" data-lightbox="gallery">
+                <img src="/_beauty_photos/${val}" class="img-responsive">
+                </a>
+                </div>`;
+            } 
+        });
+        }
+    });
+    </script>
+        </div>
+    </div>
+    
+    <!-- Black bar across bottom of page -->
+    <div id="footer"></div>
+</body>
+
+</html>
