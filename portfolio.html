@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Val's Makeup</title>
+    <link rel="shortcut icon" type="image/jpg" href="/pictures/icon.ico"/>
+</head>
+
+<style>
+    p {
+        line-height: 1.2;
+    }
+    * {
+        box-sizing: border-box; 
+    }
+    .wrapper {
+        display: flex;
+        margin: auto;
+        width: 100%;
+        justify-content: space-around; 
+        padding-top: 20px;
+        padding-bottom: 40px;
+        
+    }
+    .card {
+        width: 300px;
+        height: 425px;
+        border-radius: 15px;
+        padding: 1.5rem;
+        background: white;
+        position: relative;
+        display: flex;
+        align-items: flex-end;
+        transition: 0.4s ease-out;
+        box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5); }
+        .card:hover {
+            transform: translateY(20px); 
+        }
+            .card:hover:before {
+            opacity: 1; 
+            }
+            .card:hover .info {
+            opacity: 1;
+            }
+        .card:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 2;
+            transition: 0.5s;
+            opacity: 0;
+        }
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 15px; 
+        }
+        .card .info {
+            position: relative;
+            z-index: 3;
+            color: white;
+            opacity: 0;
+            transform: translate(0px);
+            transition: 0.5s; 
+        }
+            .card .info h1 {
+            margin: 0px; 
+            }
+            .card .info p {
+            letter-spacing: 1px;
+            font-size: 15px;
+            margin-top: 8px; 
+            }
+            .card .info button {
+            padding: 0.6rem;
+            outline: none;
+            border: none;
+            border-radius: 3px;
+            background: white;
+            color: black;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.4s ease; 
+            }
+            .card .info button:hover {
+                background: dodgerblue;
+                color: white; 
+            }
+
+    @media only screen and (max-width: 1000px) {
+    .wrapper {
+        display: table;
+        padding-bottom: 40px;
+    }
+    .card {
+        margin: auto;
+        margin-top: 25px;
+    }
+    .card:hover {
+        transform: translateX(20px);
+    }
+    }
+</style>
+
+ <body>
+    <nav class="navbar">
+        <!-- Logo -->
+        <div class="logo">Val's Makeup</div>
+        <!-- Nav Menu -->
+        <ul class="nav-links">
+        <!-- Checkbox workaround -->
+        <input type="checkbox" id="checkbox_toggle" />
+        <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+        <!-- Menus -->
+        <div class="menu">
+            <li><a href="/">Home</a></li>
+            <li><a href="/portfolio.html">Portfolio</a></li>
+            <li class="contact">
+            <a href="/contact.html">Contact</a>
+        </ul>
+    </nav>
+
+    <!-- Pictures/Text -->
+    <div class="wrapper">
+        <div class="card"><img src="/pictures/portfolio/2.jpg"/>
+            <div class="info">
+                <h1>Beauty</h1>
+                <p>[placeholder for beauty subtext]</p>
+                <br></br>
+                <a href="/beauty.html"><button >View All</button></a>
+            </div>
+        </div>
+
+        <div class="card"><img src="/pictures/portfolio/1.jpeg"/>
+            <div class="info">
+                <h1>Editorial</h1>
+                <p>[placeholder for editorial subtext]</p>
+                <br></br>
+                <a href="/editorial.html"><button>View All</button></a>
+            </div>
+        </div>
+        
+        <div class="card"><img src="/pictures/portfolio/3.webp"/>
+            <div class="info">
+                <h1>Bridal</h1>
+                <p>[placeholder for bridal subtext]</p>
+                <br></br>
+                <a href="/bridal.html"><button>View All</button></a>
+            </div>
+        </div>
+    </div>
+
+    <div style="width: 80%; margin: auto; padding-bottom: 40px;">
+        <p>Above are galleries that showcase my work. They are categorized by
+        beauty, editorals, and bridal pictures. To access them, hover over the
+        above images and select the "View All" button.</p>
+    </div>
+
+    <!-- Black bar across bottom of page -->
+    <div id="footer"></div>
+</body>
+
+</html>
