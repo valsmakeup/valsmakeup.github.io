@@ -75,8 +75,8 @@
             $(data).find("a").attr("href", function (i, val) {
             if( val.match(/\.(jpe?g|png|gif|webp)$/) ) { 
                 document.getElementById('photos').innerHTML += `<div>
-                <a href="/_beauty_photos/${val}" data-lightbox="gallery">
-                <img src="/_beauty_photos/${val}" class="img-responsive">
+                <a href="./_beauty_photos/${val}" data-lightbox="gallery">
+                <img src="./_beauty_photos/${val}" class="img-responsive">
                 </a>
                 </div>`;
             } 
