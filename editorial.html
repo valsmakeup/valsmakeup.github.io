@@ -67,23 +67,26 @@
     <!-- Picture/Text --> 
     <div class="container">
         <div class="gallery" id="photos">
-            <script>
-            var folder = "/_editorial_photos/";
-            $.ajax({
-            url : folder,
-            success: function (data) {
-            $(data).find("a").attr("href", function (i, val) {
-            if( val.match(/\.(jpe?g|png|gif|webp)$/) ) { 
-                document.getElementById('photos').innerHTML += `<div>
-                <a href="/_editorial_photos/${val}" data-lightbox="gallery">
-                <img src="/_editorial_photos/${val}" class="img-responsive">
+            <div>
+                <a href="/pictures/editorial_photos/1.jpeg" data-lightbox="gallery">
+                    <img src="/pictures/editorial_photos/1.jpeg" class="img-responsive">
                 </a>
-                </div>`;
-            } 
-        });
-        }
-    });
-    </script>
+            </div>
+            <div>
+                <a href="/pictures/editorial_photos/2.jpeg" data-lightbox="gallery">
+                    <img src="/pictures/editorial_photos/2.jpeg" class="img-responsive">
+                </a>
+            </div>
+            <div>
+                <a href="/pictures/editorial_photos/3.png" data-lightbox="gallery">
+                    <img src="/pictures/editorial_photos/3.png" class="img-responsive">
+                </a>
+            </div>
+            <div>
+                <a href="/pictures/editorial_photos/4.png" data-lightbox="gallery">
+                    <img src="/pictures/editorial_photos/4.png" class="img-responsive">
+                </a>
+            </div>
         </div>
     </div>
     
